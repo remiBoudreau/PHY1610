@@ -1,22 +1,25 @@
-# Makefile for C++_and_Modularization
+# Makefile for C++ and Modularization
+
+# Define MACROS
 CXX=g++
 CXXFLAGS= -std=c++11
 LDFLAGS=
 LDLIBS=
 
+# Define phony targets
 .PHONY: all clean
 
-# Compile lissajous binary
 all: lissajous
 
-lissajous:main_driver.o functions.o
+# Compile lissajous binary
+lissajous: main_driver.o functions.o
 	${CXX} ${CXXFLAGS} main_driver.o functions.o -o lissajous 
 
-# Compile main_driver
+# Compile main_driver object file
 main_driver.o: main_driver.cc
 	${CXX} ${CXXFLAGS} -c main_driver.cc -o main_driver.o
 
-# Compile functions
+# Compile functions object file
 functions.o: functions.cc functions.h
 	${CXX} ${CXXFLAGS} -c functions.cc -o functions.o
 
