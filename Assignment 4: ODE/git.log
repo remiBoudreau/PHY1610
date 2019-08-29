@@ -1,0 +1,59 @@
+commit b34cde09f36cb1d366f22cf347e5edc901e4385c
+Author: boudre42 <jeanmichel.boudreau@mail.utoronto.ca>
+Date:   Mon Feb 19 06:48:40 2018 -0500
+
+    Commenting and formatting completed. Ready to tar and submit
+
+commit e967e2dbd8cd5298f8d2e90356b1dbb481807ce9
+Author: boudre42 <jeanmichel.boudreau@mail.utoronto.ca>
+Date:   Mon Feb 19 06:02:38 2018 -0500
+
+    Forgot to mention, additionally makefile was created
+
+commit 3e7455aaa4700620c27d11d36f8ee47564a4f892
+Author: boudre42 <jeanmichel.boudreau@mail.utoronto.ca>
+Date:   Mon Feb 19 06:01:00 2018 -0500
+
+    Current status: Functional. Made necessary changes to call upon 'output' function in 'ball_output.cc' (i.e. declaring type of variable when passing argument 't' was not done prior). Made necessary changes to 'ball_util' (i.e. changed time_step function and now uses operator() as error was being produced with the initial manner it was coded) and also changed the manner in which variables were assigned (i.e. changed ball::init_ball to ball::ball as error was being produced with initial nmanner it was coded). Made necessary changes to main to remove all errors (i.e. proper declarations of variables etc). Assignment 4 now complete. Formatting and commenting necessary, however, and will be done next.
+
+commit 12162ac73d6dbf9dcd665c2fd9a7e069547bae5a
+Author: boudre42 <jeanmichel.boudreau@mail.utoronto.ca>
+Date:   Mon Feb 19 05:17:23 2018 -0500
+
+    Current status: Nonfunctional. Created 'ball_util.cc' which holds the class ball and its member definitions, created 'ball_output.cc' which outputs the time and state vector to user as a space seperated entries with each line associated to one time point, and created header files for each.
+
+commit 37660deb467021ae3f66ea4a354999ff9572a6c4
+Author: boudre42 <jeanmichel.boudreau@mail.utoronto.ca>
+Date:   Mon Feb 19 03:37:15 2018 -0500
+
+    Current status: Functional. Unmodular PHY1610_ass4.cc completed. Need to modularize now
+
+commit f2f6b89af49deef8c78f08f6cdb90790e1ce97bc
+Author: boudre42 <jeanmichel.boudreau@mail.utoronto.ca>
+Date:   Mon Feb 19 00:51:50 2018 -0500
+
+    removed binary associated with PHY1610_ass4.cc
+
+commit dbeac26cb1c73576f5b0f2b23a74e0f6df75b804
+Author: boudre42 <jeanmichel.boudreau@mail.utoronto.ca>
+Date:   Mon Feb 19 00:51:22 2018 -0500
+
+    Current status: Functional. Output of initial conditions to user added
+
+commit 0ecd8b1c909ad4a2d62ee988e958fa98c7c1ac96
+Author: boudre42 <jeanmichel.boudreau@mail.utoronto.ca>
+Date:   Mon Feb 19 00:19:16 2018 -0500
+
+    something.cc removed. It was the code taken from this link: http://www.boost.org/doc/libs/1_66_0/libs/numeric/odeint/doc/html/boost_numeric_odeint/tutorial/harmonic_oscillator.html#boost_numeric_odeint.tutorial.harmonic_oscillator.integration_with_constant_step_size
+
+commit 68a6472b38aba740df540923e433f019633fb3d4
+Author: boudre42 <jeanmichel.boudreau@mail.utoronto.ca>
+Date:   Mon Feb 19 00:18:12 2018 -0500
+
+    Current status: Nonfunctional. More parameters, state of system, RK5 integration scheme using boost coded
+
+commit a4ef1344ca67983de3d7c1844777d9afefc4b6f2
+Author: boudre42 <jeanmichel.boudreau@mail.utoronto.ca>
+Date:   Sun Feb 18 21:59:22 2018 -0500
+
+    Main file (PHY1610_ass4.cc) created. Current status: Nonfunctional. Parameters coded
