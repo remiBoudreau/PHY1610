@@ -1,4 +1,4 @@
-5.1 Assignment 1: C++ and modularization
+Assignment 1: C++ and modularization
 There are three parts to this assignment:
 
 1. Start the process to get a SciNet account. (by the way, if you have questions regarding the account setup, please email support@scinet.utoronto.ca).
