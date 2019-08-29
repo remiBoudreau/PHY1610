@@ -1,5 +1,4 @@
-# Makefile for Modularization, Make and Arrays
-# Makefile for C++ and Modularization
+# Makefile for Modularization, Make and Arrays/Git and Testing
 
 # Define MACROS
 CXX = g++
