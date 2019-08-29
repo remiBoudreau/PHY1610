@@ -1,0 +1,26 @@
+Assignment 2: Modularization, make, and arrays
+You're given a c++ code ants.cc (click on the file to download) that simulates ants walking on a table. The direction in which they walk depends on where they are on the table, and they can fall of the edge. The program prints the number of ants left on the table after every time step. You will restructure this code in the following way:
+
+Save the original code and its output, so you can check that your restructuring did not break anything.
+Replace the automatic 2d arrays with dynamically allocated arrays.
+Modularize the code. There should be separate modules for
+initialization
+single time step
+output per time step
+a 'driver' main function that puts it altogether
+Please recall that a proper "modularization" implies, separating your functions in several files (header with prototypes, preprocessor guards and necessary includes, and source files with the implementation of such functions).
+A Makefile should be written to compile this modular code.
+Ensure your code is clearly commented.
+Submit your code files (source and header files), your makefile, and the output of the program by January 25, 2018. The late policy can be found in the syllabus.
+
+Assignment 3: Git and testing
+Put all your files of the assignment 2 where you modularized ants.cc, under version control with git.
+While proceeding with the rest of this assignment, we expect you to make regular git commits to track your code.
+In assignment 2, you were supposed to save the output of the original, un-modular code, to compare if the output of the modular code was the same. This is an integrated test. The next part of the current assigment is to add a 'integratedtest' rule to your make file to automate running the test and doing the comparison. I.e. the command 'make integratedtest' should cause the necessary executable to be built (Hint: use dependencies!), run them, and compare their outputs.
+The final part is to implement a unit testing using the Boost Libraries for your "single_time_step" module from the previous assignment. You could test, for instance, that the time step module does not spontaneously generate ants. This requires that you install the Boost Libraries either using an installation application like yum or apt-get from linux or from the boost website: http://www.boost.org/ . (Warning: If you are using a linux emulator in a windows machine, like cygwin or mobaxterm, do not install the windows version from the website, but instead use any of the installation tools provided within the emulator, e.g. "apt-get install boost_dev" in MobaXterm.) For the implementation of the unit-test, write a separate program performing the test, and add a 'unittest' rule in your make file, such it can be ran from with the command make unittest. For simplicity, use one single git repository for the whole assignment.
+Please submit:
+
+All source, header and make files for the unit-test and (modified or original) codes.
+The output of "make integratedtest" and "make unittest".
+The output of 'git log --stat' from the development of your codes, as a file. (The --stat option shows all the changes in addition to the commit message.) We expect to see several commits, and meaningful comments. Do not include the .git directory with your submission.
+Submit by February 9, 2018. The late policy can be found in the syllabus.
