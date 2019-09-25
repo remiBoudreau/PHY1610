@@ -1,0 +1,30 @@
+Assignment 4: ODE
+Consider a system of a ball of mass m bouncing on a oscillating table. The position of the ball is denoted by (x,y,z) and its velocity by (u, v, w).
+The vertical position of the table is changing in time according to
+
+z_{table} = A \cos( 2\pi t /T)
+
+where A is the amplitude of the motion and T is the period. The force that the table exerts on the ball when the ball is at vertical position z is
+
+F_{table} = B  \exp\{ - C[z-z_{table}(t)] \}
+
+In addition, there is a gravitational force:
+
+F_{grav} = -g
+
+Your assignment
+In this assignment, you need to solve the six-dimensional ODE for the motion of the ball:
+ \frac{dx}{dt} = u 
+ \frac{dy}{dt} = v 
+ \frac{dz}{dt} = w 
+ \frac{du}{dt} = 0 
+ \frac{dv}{dt} = 0 
+ \frac{dw}{dt} = (F_{table}+F_{grav})/m 
+
+given the following parameters and initial positions:
+
+m = 1, A= 0.25, T = 2.0, g = 10, B=10, C=2.0
+x(t=0) = 0, y(t=0) = 0, z(t=0) = 10, u(t=0) = 1, v(t=0) = 0, w(t=0) = 0
+Your code should output 1000 time points between t=0 and t=30 to a file. Each time point should be a line in this file, with the values of the time, position, and velocity (all components, so 7 values per line), separated by a space.
+
+Solve this in one of two ways: either using boost::odeint, or using gsl's odeiv2. Select the fourth or fifth order Runge-Kutta methods as a the integration method, with a relative accuracy of 1e-5.
