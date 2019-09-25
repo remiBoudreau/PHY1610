@@ -1,0 +1,9 @@
+GSL multiroot solver is running...
+The initial concentrations of X, Y and Z are 0.5, 1 and 0
+iter =   1 X =  0.277778 Y =  0.888889 Z =  0.222222 
+iter =   2 X =  0.242775 Y =  0.871388 Z =  0.257225 
+iter =   3 X =  0.236682 Y =  0.868341 Z =  0.263318 
+iter =   4 X =  0.236549 Y =  0.868275 Z =  0.263451 
+iter =   5 X =  0.236549 Y =  0.868274 Z =  0.263451 
+status = success
+Equilbirium Concentrations of X, Y and Z are 0.236549, 0.868274, and 0.263451 

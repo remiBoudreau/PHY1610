@@ -1,0 +1,56 @@
+run cmd 'make all' to make programs in each directory
+
+Assignment 5:
+Consider a chemical reaction between the three substances X, Y, Z in solution (well-mixed).
+
+ 2\textrm X + Y \rightleftharpoons 2 Z
+
+Let us denote the concentrations of X, Y, and Z by x, y, and z.
+
+Let the rate of the forward reaction be k1, and that of the backward reaction be k2.
+
+According to chemical kinetics, in equilibrium, the concentrations will satisfy
+
+k_1x^2y=k_2z^2
+
+This single equation is not enough to determine the three concentrations.
+
+Additional information comes from the chemical reaction itself, which shows that x-2y is conserved in the reaction, and so is x+z. In other words,
+
+x-2y = c_1
+
+x+z = c_2
+
+Where c1 and c2 are set by the initial concentrations of the substances, denoted by x0, y0 and z0. I.e. c_1=x_0-2y_0 and c_2=x_0+z_0.
+
+Part 1
+
+We are after the equilibrium values of x, y and z given the following parameters and initial concentrations:
+
+k_1=1, k_2=0.7, x_0 = 0.5, y_0 = 1, z_0 = 0
+
+Solve for the equilibrium concentrations in two ways
+
+Directly using the above three equations, using a three-dimensional root finding routine from the GSL.
+Using that one can combine the above three equations into a single one for x:
+
+k_1x^3-(c_1k_1+2k_2)x^2+4c_2k_2 x-2k_2 c_2^2 = 0
+
+Use one of the polynomial root finding routines from the GSL for this second part.
+
+
+Part 2
+
+We are after the time it takes to reach this equilibrium. For that, we need the rate equations of the above chemical reaction, which are a set of three ODEs:
+
+\frac{dx}{dt} = 2k_2z^2 - 2k_1x^2y
+
+
+\frac{dy}{dt} = k_2z^2 - k_1x^2y
+
+
+\frac{dz}{dt} = 2k_1x^2y - 2k_2z^2
+
+Take the same initial conditions as in part 2, and solve these ODEs using the GSL's odeiv2 runge-kutta method. Solve it from time 0 to time t, such that you keep increasing t until the concentrations vary less than 1%. What is the time t?
+
+Compare the results for the concentrations with those found in part 1.
