@@ -1,16 +1,30 @@
-Assignment 6: 
-Profiling and Scaling Analysis
-In this assignment, you are going to continue with the ants code of assignments 2 and 3. You are to
-Ensure you have a SciNet account. If not, contact us.
-On SciNet, git clone the directory /scinet/course/phy1610/ants
-This version of the ants code is modularized and is changed compared to the code of assignment 2 and 3 in that it stops when there are no more ants on the tables, and it takes a command line argument which is the random seed; thus we can explore different initial conditions. The table size has also been increased.
+Assignment 4: ODE
+Consider a system of a ball of mass m bouncing on a oscillating table. The position of the ball is denoted by (x,y,z) and its velocity by (u, v, w).
+The vertical position of the table is changing in time according to
 
-On SciNet's GPC, load the modules 'gcc/4.8.1' and 'binutils/2.25' (i.e., type "module load gcc/4.8.1 binutils" on the command line). With those modules loaded, add profiling flags (-g -pg -gstabs) to the Makefile and (re)compile the code, and profile the whole application both with the 'time' command as well using gprof to get a line-by-line profile.
-Note that in a modular approach, each object file will have to have been compiled with "-g -pg -gstabs" for profiling to work, and in the linking command, again, you should have the "-g -pg -gstabs" options as well.
+z_{table} = A \cos( 2\pi t /T)
 
-Note in which lines of the code the application spends most of its time; we will attack those lines in the next assignment.
-The code comes with a script called clearingtime.sh, which uses the ants executable with an number of initial conditions (32 by default) and averages the first time at which the table is clear of ants. The initial conditions are independent and can be parallelized; by giving the number of processors as a parameter, you can run these case in parallel. Ie., "clearingtime.sh 5" would run the 32 cases, but 5 at the same time running on different processors.
+where A is the amplitude of the motion and T is the period. The force that the table exerts on the ball when the ball is at vertical position z is
 
-You are to write a script to perform a scaling analysis of the speedup of the clearingtime.sh as a function of the number of processors P, with P ranging from 1 to 8. Be sure to do this analysis on a 'debugjob'. The scaling analysis should result in a file with three columns: P, the elapsed wall time, and the speedup. The elapsed time of the script can be measured with the linux time command.
-Make a plot of the scaling behaviour of clearingtime.sh, and deduce the serial fraction f of the clearingtime.sh script from your scaling analysis.
-As in previous assignments, you should still use git version control for the makefile and the scaling analysis script.
+F_{table} = B  \exp\{ - C[z-z_{table}(t)] \}
+
+In addition, there is a gravitational force:
+
+F_{grav} = -g
+
+Your assignment
+In this assignment, you need to solve the six-dimensional ODE for the motion of the ball:
+ \frac{dx}{dt} = u 
+ \frac{dy}{dt} = v 
+ \frac{dz}{dt} = w 
+ \frac{du}{dt} = 0 
+ \frac{dv}{dt} = 0 
+ \frac{dw}{dt} = (F_{table}+F_{grav})/m 
+
+given the following parameters and initial positions:
+
+m = 1, A= 0.25, T = 2.0, g = 10, B=10, C=2.0
+x(t=0) = 0, y(t=0) = 0, z(t=0) = 10, u(t=0) = 1, v(t=0) = 0, w(t=0) = 0
+Your code should output 1000 time points between t=0 and t=30 to a file. Each time point should be a line in this file, with the values of the time, position, and velocity (all components, so 7 values per line), separated by a space.
+
+Solve this in one of two ways: either using boost::odeint, or using gsl's odeiv2. Select the fourth or fifth order Runge-Kutta methods as a the integration method, with a relative accuracy of 1e-5.
