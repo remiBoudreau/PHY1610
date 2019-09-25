@@ -1,0 +1,48 @@
+#Cores: 1
+
+real	2m14.530s
+user	2m14.221s
+sys	0m0.087s
+
+#Cores: 2
+
+real	1m8.086s
+user	2m14.230s
+sys	0m0.103s
+
+#Cores: 3
+
+real	0m47.129s
+user	2m14.396s
+sys	0m0.136s
+
+#Cores: 4
+
+real	0m34.356s
+user	2m14.368s
+sys	0m0.108s
+
+#Cores: 5
+
+real	0m30.062s
+user	2m14.323s
+sys	0m0.112s
+
+#Cores: 6
+
+real	0m25.831s
+user	2m14.523s
+sys	0m0.113s
+
+#Cores: 7
+
+real	0m21.615s
+user	2m14.667s
+sys	0m0.104s
+
+#Cores: 8
+
+real	0m17.853s
+user	2m16.213s
+sys	0m0.131s
+
